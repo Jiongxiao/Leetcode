@@ -3,7 +3,6 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-# author: TJX 
 class Solution(object):
     def deleteNode(self, node):
         """
