@@ -36,12 +36,12 @@ class Solution(object):
         	array.extend(list2[j:])
         else:
         	array.extend(list1[i:])
-        cur=ListNode(0)
-        result=cur
-        for num in array:
+        cur=ListNode(array[0])
+        head=cur
+        for num in array[1:]:
         	cur.next=ListNode(num)
         	cur=cur.next
-        return result.next
+        return head
 
 
 
