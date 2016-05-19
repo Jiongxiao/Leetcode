@@ -4,9 +4,8 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        if n==0:
+        if n<=0:
         	return False
         import math
-        maxInteger=0xffffff
-        maxPower=int 
+        maxInteger=0xffffffff
         return math.pow(3,int(math.log(maxInteger,3))) % n==0
