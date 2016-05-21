@@ -20,7 +20,7 @@ class Solution(object):
         return result
 
 
-class Solution(object):
+class Solution(object):  #这个方法不对，因为list1出来的列表顺序跟dic1不一样。没完全搞懂，字典遍历一定无序？
     def intersect(self, nums1, nums2):
         """
         :type nums1: List[int]
