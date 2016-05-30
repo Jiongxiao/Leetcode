@@ -13,3 +13,15 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
+        if p.val>q.val:
+        	p,q=q,p
+        node=root
+        while(node is not None):
+        	if node.val<=q.val and node.val>=p.val:
+        		return node
+        	if node.val>p.val:
+        		node=node.left
+        	else:
+        		node=node.right
+        return node
+
