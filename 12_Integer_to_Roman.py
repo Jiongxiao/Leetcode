@@ -9,9 +9,9 @@ class Solution(object):
         ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"],\
         ["","M","MM","MMM"]]
         base=[1000,100,10,1]
-        result=[]
+        result=''
         for i in range(4):
-        	result.append(sta[3-i][num/base[i]])
+        	result+=(sta[3-i][num/base[i]%10])
         return result
 
 
