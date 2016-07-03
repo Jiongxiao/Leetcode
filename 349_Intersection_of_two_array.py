@@ -9,7 +9,7 @@ class Solution(object):
         result=[]
         for i in nums1:
         	dic1[i]=1
-        for j in nums2:
+        for j in set(nums2):
         	if j in dic1:
         		result.append(j)
-        return list(set(result))
+        return result
