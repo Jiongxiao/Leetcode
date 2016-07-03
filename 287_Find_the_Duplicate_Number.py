@@ -41,3 +41,19 @@ class Solution(object):
                 else:
                     return findD(mid+1, end)
         return findD(1,len(nums)-1)
+
+###########################################
+class Solution(object):
+    def findDuplicate(self, nums):
+        result=0
+        for i in nums:
+            if result&(1<<i):return i
+            result+=(1<<i)
+########很机智啊！但是为啥时间跟上面差不多啊
+
+nums=[1,2,3,4,5,6,2]
+result =0 
+for i in nums:
+    print bin(result), 1<<i, result&(1<<i)
+    if result&(1<<i): print i
+    result+=(1<<i)
