@@ -19,3 +19,18 @@ class Solution(object):
         	if (target-i) in dic:
         		result=[index1,dic[target-i][0]]
         return result
+
+####太特么机智了!!!
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        dic={}
+        for i in range(len(nums)):
+        	if(nums[i] in dic):
+        		return[i,dic[nums[i]]]
+        	else:
+        		dic[target-nums[i]]=i
