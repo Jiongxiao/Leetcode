@@ -10,3 +10,16 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        if not head or not head.next:
+        	return head
+        odd=p=head
+        even=q=head.next
+        while(q.next):
+            p.next=q.next
+            q.next=p.next.next
+            p=p.next
+            q=q.next
+            if not q:
+                break
+        p.next=even
+        return odd
