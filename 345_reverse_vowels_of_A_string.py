@@ -6,7 +6,7 @@ class Solution(object):
         """
         i=0
         j=len(s)-1
-        vowels='aoeiuAOEIU'
+        vowels=set('aoeiuAOEIU')
         result=['']*len(s)
         while(i<j):
         	if s[i] not in vowels:
