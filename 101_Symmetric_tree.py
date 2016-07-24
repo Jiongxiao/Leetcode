@@ -24,6 +24,8 @@ class Solution(object):
         		newroot2=r
         		newroot2.r=l.right
         		return self.isSymmetric(newroot2) and self.isSymmetric(newroot1)
+        		# l.right,r.right=r.right,l.right
+        		# return self.isSymmetric(r) and self.isSymmetric(l)
         	else:
         		return False
         return False
@@ -53,4 +55,5 @@ class Solution(object):
         	else:
         		return False
         return False
+
        
