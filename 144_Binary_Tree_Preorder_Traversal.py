@@ -5,7 +5,7 @@
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
+class Solution(object):  ###recursion
     def preorderTraversal(self, root):
         """
         :type root: TreeNode
@@ -37,4 +37,29 @@ class Solution(object):
         		stack.append(p.right)
         	if p.left:
         		stack.append(p.left)
+        return result
+
+class Solution(object):
+    def preorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+        	return []
+        result=[]
+        from collections import deque
+
+        stack=deque()
+        p=root
+        while(True):
+        	result.append(p.val)
+        	q=p.right
+        	if q:
+        		stack.append(q)
+        	p=p.left
+        	if not p:
+        		if not stack:
+        			break
+        		p=stack.pop()
         return result
