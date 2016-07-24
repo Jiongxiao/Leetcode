@@ -56,4 +56,27 @@ class Solution(object):
         		return False
         return False
 
-       
+class Solution(object):
+    def isSymmetric(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        if not root:
+        	return True
+        from collections import deque
+
+        queue=deque([root])
+        while(queue):
+        	level=[]
+        	for i in range(len(queue)):
+        		p=queue.popleft()
+        		if p:
+        			level.append(p.val)
+        			queue.append(p.left)
+        			queue.append(p.right)
+        		else: level.append(None)
+        	if list(reversed(level))!=level:
+        		return False
+        return True
+        		
