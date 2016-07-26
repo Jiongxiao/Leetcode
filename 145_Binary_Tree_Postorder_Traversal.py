@@ -59,6 +59,23 @@ class Solution(object):
 
         return result
 	        
+public List<Integer> postorderTraversal(TreeNode root) {
+	List<Integer> results = new ArrayList<Integer>();
+	Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+	while (!stack.isEmpty() || root != null) {
+		if (root != null) {
+			stack.push(root);
+			results.add(root.val);
+			root = root.right;
+		} else {
+			root = stack.pop().left;
+		}
+	}
+	Collections.reverse(results);
+	return results;
+}  ###pre-order traversal is root-left-right,
+###### and post order is left-right-root. 
+###### modify the code for pre-order to make it root-right-left, and then reverse the output so that we can get left-right-root .
 
 	        	
 
