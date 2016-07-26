@@ -63,3 +63,26 @@ class Solution(object):
         			break
         		p=stack.pop()
         return result
+
+class Solution(object):
+    def preorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+            return []
+        result=[]
+        from collections import deque
+
+        stack=deque()
+        p=root
+        while(stack or p):
+            if p:
+                result.append(p.val)
+                stack.append(p)
+                p=p.left
+            else:
+                p=stack.pop()
+                p=p.right
+        return result
