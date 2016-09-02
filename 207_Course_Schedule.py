@@ -45,7 +45,8 @@ class Solution(object):
         else:
             return True
 
-
-
+# 10
+# [[5,8],[3,5],[1,9],[4,5],[0,2],[1,9],[7,8],[4,9]]
+#####其实只要用一个长度为numCourses的列表就好
 
             
