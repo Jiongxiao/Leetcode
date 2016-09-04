@@ -22,7 +22,7 @@ class Solution(object):
         :rtype: int
         """
         import random
-        node=self.head.next
+        node=self.head.next ###important     reservoir sampling
         result=self.head
         i=1
         while(node):
