@@ -27,5 +27,26 @@ class Solution(object):
             else:
                 j-=1
         return cnt
+######nlog(X)
 
+
+
+class Solution(object):
+    def kthSmallest(self, matrix, k):
+        """
+        :type matrix: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
+        n=len(matrix)
+        heap=[]
+        for i in range(n):
+            heap.append((matrix[0][i],0,i))
+        heapq.heapify(heap)
+        for i in range(k):
+            val,r,c=heapq.heappop(heap)
+            if r<n-1:
+                heapq.heappush(heap,(matrix[r+1][c],r+1,c))
+        return val
+#klog(n)
 
