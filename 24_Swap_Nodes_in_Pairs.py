@@ -2,7 +2,7 @@
 # class ListNode(object):
 #     def __init__(self, x):
 #         self.val = x
-#         self.next = None
+#         self.next = None 
 
 class Solution(object):
     def swapPairs(self, head):
@@ -25,7 +25,7 @@ class Solution(object):
 #         self.val = x
 #         self.next = None
 
-class Solution(object):
+class Solution(object):#better
     def swapPairs(self, head):
         """
         :type head: ListNode
