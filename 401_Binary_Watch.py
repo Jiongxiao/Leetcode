@@ -33,6 +33,6 @@ class Solution(object):
     		res.append("%d:%02d" %(hour,minute))
     	for i in range(pos,10):
     		if i<=3:
-    			self.help(num-1,i+1,hour+1<<(3-i),minute,res)
+    			self.help(num-1,i+1,hour+(1<<(3-i)),minute,res)
     		else:
-    			self.help(num-1,i+1,hour,minute+1<<(9-i),res)
+    			self.help(num-1,i+1,hour,minute+(1<<(9-i)),res)
