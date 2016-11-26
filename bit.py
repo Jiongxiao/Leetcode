@@ -31,11 +31,10 @@ def solution(A, B, C):
             if bit:
                 try_add_num+=2**alter_position[n_bits-1-i]
         new_number=public+try_add_num
-        print new_number
         # print s
         if ((A&new_number)>=A) or ((B&new_number)>=B)or ((C&new_number)>=C):
             count+=1
-            # print new_number
+            print new_number
         start+=1
     return count
 A,B,C=(1073741727, 1073741631, 1073741679)
