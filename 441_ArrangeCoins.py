@@ -6,9 +6,9 @@ class Solution(object):
         """
         import math
         result=0
-        root=int(math.sqrt(n))
+        root=int(math.sqrt(2*n))+1
         for i in range(root,0,-1):
-            if i*(i+1)<=n:
+            if i*(i+1)/2<=n:
                 result=i
                 return result
 
