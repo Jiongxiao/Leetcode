@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution(object):  ##Divide the numbers in ranges like [2-3], [4-7], [8-15] and so on. And try to generate new range from previous.
     def countBits(self, num):
         """
         :type num: int
