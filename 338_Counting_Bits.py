@@ -18,3 +18,17 @@ class Solution(object):  ##Divide the numbers in ranges like [2-3], [4-7], [8-15
                 else:
                     result.append(result[i-flag/4]+1)
         return result
+
+
+class Solution(object):
+    def countBits(self, num):
+        """
+        :type num: int
+        :rtype: List[int]
+        """
+        if num==0:
+            return [0]
+        res=[0]*(num+1)
+        for i in range(num+1):
+            res[i]=res[i>>1]+(i&1)
+        return res
