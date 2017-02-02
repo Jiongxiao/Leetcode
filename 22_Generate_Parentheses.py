@@ -29,6 +29,25 @@ class Solution(object):
                 result.append(tur[0])
         return result
 
+class Solution(object):
+    def generateParenthesis(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        res=[]
+        self.backtract(res,'',0,0,n)
+        return res
+    def backtract(self,res, s, left, right, n):
+        if (len(s)==2*n):
+            res.append(s)
+            return
+
+        if left<n:
+            self.backtract(res,s+'(',left+1,right,n)
+        if left>right:
+            self.backtract(res,s+')', left, right+1,n)
+
 
 
 
