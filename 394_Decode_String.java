@@ -3,16 +3,16 @@ public class Solution {
         Stack<Integer> num= new Stack<>();
         Stack<String> string= new Stack<>();
         int count=0;
-        String res="";
+        StringBuilder res=new StringBuilder();
         for (int i=0; i<s.length();i++){
             char ch=s.charAt(i);
             if (Character.isDigit(ch)){
                 count=count*10+Character.getNumericValue(ch);
             }
             else if (ch=='['){
-                string.push(res);
+                string.push(res.toString());
                 num.push(count);
-                res="";
+                res.setLength(0);
                 count=0;
 
             }
@@ -22,12 +22,12 @@ public class Solution {
                 for (int j=0; j<repeat;j++){
                     temp.append(res);
                 }
-                res=temp.toString();
+                res=temp;
             }
             else{
-                res+=ch;
+                res.append(ch);
             }
         }
-        return res;
+        return res.toString();
     }
 }
