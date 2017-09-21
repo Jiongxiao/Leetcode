@@ -45,3 +45,50 @@ else:
         [res.append(matrix[l][k]) for l in range(n-1-k,k-1,-1) if matrix[l][k] not in res]
 for i in res:
     print i,
+
+
+
+import java.util.ArrayList;
+public class Solution {
+    public ArrayList<Integer> printMatrix(int [][] array) {
+
+        if(array == null) return null;
+
+        ArrayList <Integer> result = new ArrayList();
+        int columns = array[0].length;
+        int rows = array.length;
+
+        // 求圈数
+        int countOfCircle = 0; 
+        if(columns < rows){
+            countOfCircle = (columns - 1) / 2 + 1;
+        }else{
+            countOfCircle = (rows - 1) / 2 + 1;
+         }
+
+        // 按顺序进行遍历操作，并加入到新的数组中
+        for(int circle = 0; circle < countOfCircle; circle ++){
+
+            // 从左到右
+            for(int first = circle; first < columns - circle; first ++){
+                result.add(array[circle][first]);
+            }
+
+            // 从上到下
+            for(int second = circle + 1; second < rows - circle;second ++){
+                result.add(array[second][columns - circle -1]);
+            }
+
+            // 从右到左
+            for(int third = columns - circle - 2; third >= circle && (rows - circle - 1) != circle; third--){
+                result.add(array[rows - circle - 1][third]);
+            }
+
+            // 从下到上
+            for(int fourth = rows - circle - 2; fourth > circle && (columns - circle - 1)!= circle;fourth --){
+                result.add(array[fourth][circle]);
+            }
+        }
+        return result;
+    }
+}
